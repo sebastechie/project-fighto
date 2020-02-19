@@ -79,6 +79,7 @@ main .mid-container .mid1 .player, main .mid-container .mid3 .player {
   width: 100%;
   text-align: center;
   margin-top: 30px;
+  text-transform: uppercase;
 }
 
 main .mid-container .mid1 .score, main .mid-container .mid3 .score {
