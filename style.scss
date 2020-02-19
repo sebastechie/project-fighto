@@ -1,3 +1,169 @@
-div {
-    border: 2px solid red;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    // border: 2px solid red;  
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .welcome {
+        // border: 2px solid blue;    
+        background-color: purple; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 15%;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            height: 100%;
+            // background-image: none;
+        }
+    }
+
+    .mid-container {
+        // border: 2px solid yellow;   
+        height: 70%;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #141414;
+        color: aliceblue;
+        // overflow: hidden;
+    
+        .mid1, .mid3 {
+            // border: 2px solid aqua;   
+            height: 100%;  
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            font-family: 'press start 2p', cursive;
+
+            .player {
+                border-bottom: 4px solid #FC9F21;
+                color: #FC9F21;
+                height: 10%;
+                width: 100%;
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            .score {
+                // border: 2px solid red;
+                height: 10%;
+                width: 100%;
+                text-align: center; 
+                margin-top: 50px;
+                letter-spacing: 3px;
+            }
+
+            .score-print {
+                // border: 2px solid blue;
+                width: 100%;
+                height: 30%;
+                text-align: center;
+                font-size: 60px;
+            }
+        }
+    
+        .mid2 {
+            // border: 0.5px solid aliceblue;
+            height: 95%;
+            width: 55%;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .bkg-img {
+                // border: 2px solid orange;
+                position: absolute;
+                background-size: cover;
+            }
+
+            #griff {
+                position: absolute;
+                top: 180px;
+                left: 300px;
+            }
+
+            #punch1 {
+                // border: 2px solid yellow;
+                height: 230px;
+                width: 32%;
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                top: 100px;
+                left: 260px;
+
+                img {
+                    // border: 2px solid red;
+                    position: absolute;
+                    height: 100%;
+                    // display: none;
+                }
+            }
+
+            #punch2 {
+                border: 2px solid red;
+                height: 230px;
+                width: 32%;
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                top: 100px;
+                left: 260px;
+                display: none;
+
+                img {
+                    position: absolute;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    
+    .mid-container img {
+        background-size: cover;
+    }
+
+    footer {
+        // border: 2px solid orange;   
+        background-color: purple;
+        width: 100%;
+        height: 15%;
+        display: flex;
+        justify-content: space-between;
+        // align-items: ;
+        overflow: hidden;
+        background-size: fill;
+
+        img {
+            height: 90%;
+            padding-left: 20px;
+        }
+
+        .leggo {
+            // border: 2px solid white;
+            font-family: 'press start 2p', cursive;
+            letter-spacing: 2px;
+            color: aliceblue;
+            text-align: center;
+            padding-top: 40px;
+            width: 40%;
+            text-transform: uppercase;
+        }
+    }
 }

@@ -1,4 +1,198 @@
-div {
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .welcome {
+  background-color: purple;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 15%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+main .welcome img {
+  height: 100%;
+}
+
+main .mid-container {
+  height: 70%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #141414;
+  color: aliceblue;
+}
+
+main .mid-container .mid1, main .mid-container .mid3 {
+  height: 100%;
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-family: 'press start 2p', cursive;
+}
+
+main .mid-container .mid1 .player, main .mid-container .mid3 .player {
+  border-bottom: 4px solid #FC9F21;
+  color: #FC9F21;
+  height: 10%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+main .mid-container .mid1 .score, main .mid-container .mid3 .score {
+  height: 10%;
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  letter-spacing: 3px;
+}
+
+main .mid-container .mid1 .score-print, main .mid-container .mid3 .score-print {
+  width: 100%;
+  height: 30%;
+  text-align: center;
+  font-size: 60px;
+}
+
+main .mid-container .mid2 {
+  height: 95%;
+  width: 55%;
+  overflow: hidden;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .mid-container .mid2 .bkg-img {
+  position: absolute;
+  background-size: cover;
+}
+
+main .mid-container .mid2 #griff {
+  position: absolute;
+  top: 180px;
+  left: 300px;
+}
+
+main .mid-container .mid2 #punch1 {
+  height: 230px;
+  width: 32%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 100px;
+  left: 260px;
+}
+
+main .mid-container .mid2 #punch1 img {
+  position: absolute;
+  height: 100%;
+}
+
+main .mid-container .mid2 #punch2 {
   border: 2px solid red;
+  height: 230px;
+  width: 32%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 100px;
+  left: 260px;
+  display: none;
+}
+
+main .mid-container .mid2 #punch2 img {
+  position: absolute;
+  height: 100%;
+}
+
+main .mid-container img {
+  background-size: cover;
+}
+
+main footer {
+  background-color: purple;
+  width: 100%;
+  height: 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
+  background-size: fill;
+}
+
+main footer img {
+  height: 90%;
+  padding-left: 20px;
+}
+
+main footer .leggo {
+  font-family: 'press start 2p', cursive;
+  letter-spacing: 2px;
+  color: aliceblue;
+  text-align: center;
+  padding-top: 40px;
+  width: 40%;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=style.css.map */
