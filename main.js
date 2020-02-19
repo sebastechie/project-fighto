@@ -110,37 +110,39 @@ let punch1 = {
 document.onkeydown = function (e) {
     console.log(e.keyCode);
 
+    let imageChange = document.getElementById('ready');
 
     if (e.keyCode === 32) {
         console.log("LEFT");
         punch1.left = punch1.left - 15;
+        imageChange.src = '/images/poser1-edit.png';
         moveHero();
     }
     else if (e.keyCode === 13) {
         console.log("RIGHT");
         punch1.left = punch1.left + 15;
+        imageChange.src = '/images/poser2.png'
         moveHero();
     }
 
     function moveHero() {
         document.getElementById('punch1').style.left = punch1.left + "px";
-
     }
 }
 
-let imgTrack = 'f';
+// let imgTrack = 'f';
 
-const change = () => {
-    let imageChange = document.getElementById('fb');
-    // imageChange.src = '/images/ig-icon.png'
-    if (imgTrack === 'f') {
-        imageChange.src = '/images/poser1-edit.png';
-        imgTrack = 'ig'
-    } else {
-        imageChange.src = '/images/poser2.png'
-        imgTrack = 'f';
-    }
-}
+// const change = () => {
+//     let imageChange = document.getElementById('fb');
+//     // imageChange.src = '/images/ig-icon.png'
+//     if (imgTrack === 'f') {
+//         imageChange.src = '/images/poser1-edit.png';
+//         imgTrack = 'ig'
+//     } else {
+//         imageChange.src = '/images/poser2.png'
+//         imgTrack = 'f';
+//     }
+// }
 
 // let punch2 = {
 //     top: 100,
