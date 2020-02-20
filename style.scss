@@ -29,11 +29,11 @@ main {
     }
 
     .mid-container {
-        // border: 2px solid yellow;   
+        border: 2px solid yellow;   
         height: 70%;
         width: 100%;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: center;
         background-color: #141414;
         color: aliceblue;
@@ -42,7 +42,7 @@ main {
         .mid1, .mid3 {
             // border: 2px solid aqua;   
             height: 100%;  
-            width: 20%;
+            width: 15%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -78,9 +78,10 @@ main {
         }
     
         .mid2 {
-            // border: 0.5px solid aliceblue;
-            height: 95%;
-            width: 55%;
+            border: 0.5px solid red;
+            left: 0;
+            height: 100%;
+            min-width: 700px;
             overflow: hidden;
             position: relative;
             display: flex;
@@ -88,11 +89,12 @@ main {
             align-items: center;
 
             .bkg-img {
-                // border: 2px solid orange;
+                border: 2px solid orange;
                 position: absolute;
-                background-size: cover;
+                background-size: fill;
                 // display: none;
-
+                height: auto;
+                width: auto;
             }
 
             #griff {
@@ -102,7 +104,7 @@ main {
             }
 
             #punch1 {
-                // border: 2px solid yellow;
+                border: 2px solid yellow;
                 // height: 230px;
                 height: 50%;
                 width: 32%;
@@ -117,6 +119,10 @@ main {
                     position: absolute;
                     height: 100%;
                     // display: none;
+                }
+
+                #ready {
+                    border: 2px solid red;
                 }
             }
 
@@ -185,5 +191,3 @@ main {
         }
     }
 }
-
-

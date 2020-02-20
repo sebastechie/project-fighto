@@ -1,175 +1,106 @@
-// let puck = document.querySelectorAll('.first div');
-
-// let leftDistance;
-
-
-// const puck = document.getElementById("griff");
-// console.log("puck");
-
-// puck.addEventListener("keydown", event => {
-//     if (event.keyCode === 32) {
-
-//     }
-// } )
-
-// .addEventListener("keydown", event => {
-//     if (leftDistance === 20 || leftDistance === 60) {
-//         endGame();
-//     } else {
-//         handleKeyPress(event.keyCode);
-//     }
-//     console.log();
-// });
-
-// const handleKeyPress = keyCode => {
-//     if (keyCode === 32) {
-//         moveTo(--leftDistance);
-//     } else if (keyCode === 13) {
-//         moveTo(++leftDistance);
-//         console.log();
-//     }
-// };
-
-// const moveTo = (distance) => puck.style.left = distance + "vw";
-
-
-
-
-
-
-
-
-
-
-// ===============================================================
-// ==============================================================
-
-
-// window.onload = () => {
-
-// let leftDistance;
-// const puck = document.querySelectorAll('.first div');
-
-// document.addEventListener("keyup", event => {
-//     if (leftDistance === 20 || leftDistance === 60) {
-//         endGame();
-//     } else {
-//         handleKeyPress(event.keyCode);
-//     }
-// });
-
-//     const handleKeyPress = keyCode => {
-//         if (keyCode === 32) {
-//             moveTo(-leftDistance);
-//         } else if (keyCode === 13) {
-//             moveTo(+leftDistance);
-//         }
-//     };
-
-//     const moveTo = (distance) => puck.style.left = distance + "vw";
-
-// }
-
-// ===============================================================
-// ==============================================================
-
-// let griff = {
-//     top: 100,
-//     left: 300
-// }
-
-
-// document.onkeydown = function(e) {
-//     console.log(e.keyCode);
-
-
-//     if(e.keyCode === 32){
-//         console.log("LEFT");
-//         griff.left = griff.left - 15;
-//         moveHero();
-//     }
-//     else if (e.keyCode === 13){
-//         console.log("RIGHT");
-//         griff.left = griff.left + 15;
-//         moveHero();
-//     }
-
-//     function moveHero() {
-//         document.getElementById('griff').style.left = griff.left + "px";
-//     }
-// }
-
-// ===============================================================
-// ==============================================================
 
 let punch1 = {
-    top: 100,
-    left: 260
+    // top: 1,
+    left: 50
 }
 
-document.onkeydown = function (e) {
+// let playerCounter = 0;
+
+document.onkeyup = function (e) {
     console.log(e.keyCode);
 
     let imageChange = document.getElementById('ready');
+    
 
-    if (e.keyCode === 32) {
-        console.log("LEFT");
-        punch1.left = punch1.left - 15;
+    // const moveTurns = () => {
+    //     // ENTER MOVE TURNS
+    //     if (playerCounter % 2 === 0) {
+    //         imageChange.src = '/images/poser1-edit.png';
+    //         playerCounter++;
+    //     } else if (playerCounter % 2 === 1) {
+    //         imageChange.src = '/images/poser2.png';
+    //         playerCounter++;
+    //     }
+    // }
+
+    const playerMove = () => {
+
+        document.getElementById('punch1').style.left = "10%";
+        const positionLeft = document.getElementById('punch1').style.left;
+        const positionRight = document.getElementById('punch1').style.right;
+        const windowPosition = document.querySelector(".mid2").style.left;
+        console.log(positionLeft);
+        console.log(positionRight);
+        console.log(windowPosition);
+    }
+
+    if (e.keyCode === 13) {
+        // console.log("LEFT");
+        punch1.left = punch1.left - 32;
         imageChange.src = '/images/poser1-edit.png';
-        moveHero();
-    }
-    else if (e.keyCode === 13) {
-        console.log("RIGHT");
-        punch1.left = punch1.left + 15;
-        imageChange.src = '/images/poser2.png'
-        moveHero();
-    }
+        playerMove();
 
-    function moveHero() {
-        document.getElementById('punch1').style.left = punch1.left + "px";
+    }
+    else if (e.keyCode === 32) {
+        // console.log("RIGHT");
+        punch1.left = punch1.left + 32;
+        imageChange.src = '/images/poser2.png'
+        playerMove();
     }
 }
 
-// let imgTrack = 'f';
+const winCondition = () => {
 
-// const change = () => {
-//     let imageChange = document.getElementById('fb');
-//     // imageChange.src = '/images/ig-icon.png'
-//     if (imgTrack === 'f') {
-//         imageChange.src = '/images/poser1-edit.png';
-//         imgTrack = 'ig'
-//     } else {
-//         imageChange.src = '/images/poser2.png'
-//         imgTrack = 'f';
-//     }
-// }
+    let pMove = document.getElementsByClassName('punching');
+    
+    // let winner1 = {
+    //     // top: 100,
+    //     left: 506
+    // }
+    // let winner11 = {
+    //     // top: 100,
+    //     left: 339
+    // }
+    // let winner2 = {
+    //     // top: 100,
+    //     left: 5        
+    // }
+    // let winner22 = {
+    //     // top: 100,
+    //     left: 173    
+    // }
 
-// let punch2 = {
-//     top: 100,
-//     left: 260
-// }
+    // if ((pMove > winner11) && (pMove <=winner1 )) {
+    //     console.log("player 1 wins")
+    //     // return true;
+    // } else if ((pMove  <= winner22) && (pMove >= winner2)) {
+    //     console.log("player 2 wins")
+    // } else {
+    //     console.log("no one wins")
+    // };
 
-// document.onkeydown = function(e) {
-//     console.log(e.keyCode);
+      let winner1 = {
+        // top: 100,
+        left: 2
+    }
+    // let winner11 = {
+    //     // top: 100,
+    //     left: 
+    // }
 
+    if (pMove <= 10)  {
+        console.log("2win")
+        return true;
+    } else { 
+        console.log("bbbbbbbbbbbbbbb")
+        // return false;
+    }
 
-//     if(e.keyCode === 32){
-//         console.log("LEFT");
-//         punch2.left = punch2.left - 15;
-//         moveHero();
-//     }
-//     else if (e.keyCode === 13){
-//         console.log("RIGHT");
-//         punch2.left = punch2.left + 15;
-//         moveHero();
-//     }
+    winCondition();
+};
 
-//     function moveHero() {
-//         document.getElementById('punch2').style.left = punch2.left + "px";
-
-//     }
-// }
-
+// ===============================================================
+// =================== WIN CONDITION     ========================
 
 
 
@@ -184,5 +115,3 @@ document.onkeydown = function (e) {
     //  1.1 make div change between punch first and second for each key press
 // 2. make left and right move by about 10px each press
 // 3. declare winner once certain amount of moves have been achieved
-
-
