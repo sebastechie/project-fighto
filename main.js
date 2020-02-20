@@ -1,16 +1,13 @@
 
 let punch1 = {
     // top: 1,
-    left: 50
+    left: 255
 }
-
-// let playerCounter = 0;
 
 document.onkeyup = function (e) {
     console.log(e.keyCode);
 
     let imageChange = document.getElementById('ready');
-    
 
     // const moveTurns = () => {
     //     // ENTER MOVE TURNS
@@ -25,7 +22,8 @@ document.onkeyup = function (e) {
 
     const playerMove = () => {
 
-        document.getElementById('punch1').style.left = "10%";
+        document.getElementById('punch1').style.left = punch1.left + "px";
+
         const positionLeft = document.getElementById('punch1').style.left;
         const positionRight = document.getElementById('punch1').style.right;
         const windowPosition = document.querySelector(".mid2").style.left;
@@ -37,22 +35,35 @@ document.onkeyup = function (e) {
     if (e.keyCode === 13) {
         // console.log("LEFT");
         punch1.left = punch1.left - 32;
-        imageChange.src = '/images/poser1-edit.png';
+        // imageChange.src = '/images/poser1-edit.png';
+
         playerMove();
 
     }
     else if (e.keyCode === 32) {
         // console.log("RIGHT");
         punch1.left = punch1.left + 32;
-        imageChange.src = '/images/poser2.png'
+        // imageChange.src = '/images/poser2.png'
         playerMove();
     }
+
+    const winCondition = () => {
+
+        // let pMove = document.getElementsByClassName('punching');
+
+        if (imageChange === 127) {
+            alert("PLAYER 1 WINS");
+            // return true;
+
+        } else if (imageChange === 479) {
+            alert("PLAYER 2")
+            // return false;
+        };
+    }
+
+    winCondition();
 }
 
-const winCondition = () => {
-
-    let pMove = document.getElementsByClassName('punching');
-    
     // let winner1 = {
     //     // top: 100,
     //     left: 506
@@ -79,25 +90,7 @@ const winCondition = () => {
     //     console.log("no one wins")
     // };
 
-      let winner1 = {
-        // top: 100,
-        left: 2
-    }
-    // let winner11 = {
-    //     // top: 100,
-    //     left: 
-    // }
 
-    if (pMove <= 10)  {
-        console.log("2win")
-        return true;
-    } else { 
-        console.log("bbbbbbbbbbbbbbb")
-        // return false;
-    }
-
-    winCondition();
-};
 
 // ===============================================================
 // =================== WIN CONDITION     ========================
