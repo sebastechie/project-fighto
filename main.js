@@ -5,6 +5,10 @@ let punch1 = {
 }
 
 let positionLeft;
+let pOneScore = 0;
+let pTwoScore = 0;
+const printOne = document.getElementById('print1');
+const printTwo = document.getElementById('print2');
 
 document.onkeyup = function (e) {
     console.log(e.keyCode);
@@ -25,7 +29,7 @@ document.onkeyup = function (e) {
     if (e.keyCode === 13) {
         // console.log("LEFT");
         punch1.left = punch1.left - 32;
-        imageChange.src = '/images/poser1-edit.png';
+        imageChange.src = '/images/poser1.png';
         playerMove();
     }
     else if (e.keyCode === 32) {
@@ -38,15 +42,54 @@ document.onkeyup = function (e) {
     const winCondition = () => {
         if (positionLeft === '-1px') {
             alert("PLAYER 1 WINS");
+            //insert win message 
             // endGame();
         } else if (positionLeft === '479px') {
-            alert("PLAYER 2")
+            alert("PLAYER 2 WINS")
+            //insert win message 
             // endGame();
         };
     }
-
     winCondition();
 }
+
+const incrementScore = () => {
+    if (positionLeft === '-1px') {
+        pOneScore++;
+        // scoreTrack('print1', pOneScore)
+    } else if (positionLeft === '479px') {
+        pTwoScore++;
+        // scoreTrack('print2', pOneScore)
+    }
+
+    let scores = {
+        player1: pOneScore,
+        player2: pTwoScore
+    }
+    return scores;
+}
+
+const displayScore = (scores) => {
+    console.log(scores);
+    myElem = document.getElementById('print1');
+    myElem2 = document.getElementById('print2');
+    myElem.innerText8 = scores.player1;
+    myElem2.innerText = scores.player2;
+    return true;
+}
+
+// const scoreTrack = () => {
+//     if (positionLeft === '-1px') {
+//         printOne.innerText = "A";
+//     } else if (positionLeft === '479px') {
+//         printTwo.innerText = "B";
+//     }
+// }
+
+
+//MAKE ENDGAME FUNCTION
+
+//MAKE RESET FUNCTION
 
 // ===============================================================
 // ==============================================================
