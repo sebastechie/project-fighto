@@ -39,7 +39,6 @@ main .welcome img {
 }
 
 main .mid-container {
-  border: 2px solid yellow;
   height: 70%;
   width: 100%;
   display: -webkit-box;
@@ -118,7 +117,6 @@ main .mid-container .mid2 {
 }
 
 main .mid-container .mid2 .bkg-img {
-  border: 2px solid orange;
   position: absolute;
   background-size: fill;
   height: auto;
@@ -134,7 +132,7 @@ main .mid-container .mid2 #griff {
 main .mid-container .mid2 #punch1 {
   border: 2px solid yellow;
   height: 50%;
-  width: 32%;
+  width: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -144,6 +142,7 @@ main .mid-container .mid2 #punch1 {
   position: absolute;
   top: 35%;
   left: 33%;
+  z-index: 2;
 }
 
 main .mid-container .mid2 #punch1 img {
@@ -151,12 +150,7 @@ main .mid-container .mid2 #punch1 img {
   height: 100%;
 }
 
-main .mid-container .mid2 #punch1 #ready {
-  border: 2px solid red;
-}
-
 main .mid-container .mid2 #punch2 {
-  border: 2px solid red;
   height: 230px;
   width: 32%;
   display: -webkit-box;
@@ -180,24 +174,19 @@ main .mid-container img {
   background-size: cover;
 }
 
-main .test {
+main .mid-bottom {
   border: 2px solid red;
-  background-color: yellow;
-  height: 70px;
-  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  height: 30px;
 }
 
-main .test img {
-  height: 50px;
+main .mid-bottom btn {
+  border: 6px solid blue;
 }
 
 main footer {

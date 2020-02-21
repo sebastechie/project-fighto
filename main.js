@@ -1,10 +1,11 @@
 
 let punch1 = {
     // top: 1,
-    left: 255
+    left: 300
 }
 
 let positionLeft;
+
 let pOneScore = 0;
 let pTwoScore = 0;
 const printOne = document.getElementById('print1');
@@ -17,10 +18,10 @@ document.onkeyup = function (e) {
     const playerMove = () => {
 
         document.getElementById('punch1').style.left = punch1.left + "px";
-
         positionLeft = document.getElementById('punch1').style.left;
         const positionRight = document.getElementById('punch1').style.right;
         const windowPosition = document.querySelector(".mid2").style.left;
+        
         console.log(positionLeft);
         console.log(positionRight);
         console.log(windowPosition);
@@ -28,23 +29,37 @@ document.onkeyup = function (e) {
 
     if (e.keyCode === 13) {
         // console.log("LEFT");
-        punch1.left = punch1.left - 32;
+        punch1.left = punch1.left -= 50;
+        if (positionLeft < 2) {
+            positionLeft += 50;
+        }
         imageChange.src = '/images/poser1.png';
         playerMove();
     }
     else if (e.keyCode === 32) {
         // console.log("RIGHT");
-        punch1.left = punch1.left + 32;
+        punch1.left = punch1.left += 50;
+        if (positionLeft >= 600) {
+            positionLeft -= 50;
+        }
         imageChange.src = '/images/poser2.png'
         playerMove();
     }
 
     const winCondition = () => {
-        if (positionLeft === '-1px') {
+        if (positionLeft === '0px') {
+            incrementScore();
+            console.log("hello");
+            printOne.innerHTML = pOneScore++;
+            // printOne.innerHTML = "You win!";
             alert("PLAYER 1 WINS");
             //insert win message 
             // endGame();
-        } else if (positionLeft === '479px') {
+        } else if (positionLeft === '700px') {
+            incrementScore();
+            console.log("bye");
+            printTwo.innerHTML = pTwoScore++;
+            // printTwo.innerHTML = "You win!";
             alert("PLAYER 2 WINS")
             //insert win message 
             // endGame();
@@ -61,30 +76,54 @@ const incrementScore = () => {
         pTwoScore++;
         // scoreTrack('print2', pOneScore)
     }
-
-    let scores = {
-        player1: pOneScore,
-        player2: pTwoScore
-    }
-    return scores;
 }
 
-const displayScore = (scores) => {
-    console.log(scores);
-    myElem = document.getElementById('print1');
-    myElem2 = document.getElementById('print2');
-    myElem.innerText8 = scores.player1;
-    myElem2.innerText = scores.player2;
-    return true;
+const maxMove = () => {
+
 }
 
-// const scoreTrack = () => {
-//     if (positionLeft === '-1px') {
-//         printOne.innerText = "A";
-//     } else if (positionLeft === '479px') {
-//         printTwo.innerText = "B";
-//     }
-// }
+document.getElementById('reset')
+    .addEventListener('click', () => {
+        window.location.reload(true);
+    });
+
+// $('#reset').click(function () {
+//     window.location.reload(true);
+// })
+
+// ===============================================================
+// ==============================================================
+
+
+    // const endGame = () => {
+    //     if (incrementScore === 3) {
+    //         alert("CHAMPION!")
+    //     } else {
+    //         return null;
+    //     }
+    // }
+
+    // endGame();
+
+    // const resetGame = () => {
+    //     // imageChange.style.left = positionLeft + "px";
+    // }
+
+    // resetGame();
+
+    // document.getElementById("reset").onclick = function () {
+    //     document.getElementById("numbers").innerHTML = "";
+    // };
+
+    // const displayScore = (scores) => {
+    //     console.log(scores);
+    //     myElem = document.getElementById('print1');
+    //     myElem2 = document.getElementById('print2');
+    //     myElem.innerText8 = scores.player1;
+    //     myElem2.innerText = scores.player2;
+    //     return true;
+
+
 
 
 //MAKE ENDGAME FUNCTION
