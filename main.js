@@ -21,13 +21,13 @@ document.onkeyup = function (e) {
         positionLeft = document.getElementById('punch1').style.left;
         const positionRight = document.getElementById('punch1').style.right;
         const windowPosition = document.querySelector(".mid2").style.left;
-        
+
         console.log(positionLeft);
         console.log(positionRight);
         console.log(windowPosition);
     }
 
-    if (e.keyCode === 13) {
+    if (e.keyCode == 13) {
         // console.log("LEFT");
         punch1.left = punch1.left -= 50;
         if (positionLeft < 2) {
@@ -36,7 +36,7 @@ document.onkeyup = function (e) {
         imageChange.src = '/images/poser1.png';
         playerMove();
     }
-    else if (e.keyCode === 32) {
+    else if (e.keyCode == 32) {
         // console.log("RIGHT");
         punch1.left = punch1.left += 50;
         if (positionLeft >= 600) {
@@ -51,16 +51,18 @@ document.onkeyup = function (e) {
             incrementScore();
             console.log("hello");
             printOne.innerHTML = pOneScore++;
-            // printOne.innerHTML = "You win!";
-            alert("PLAYER 1 WINS");
+            printOne.innerHTML = "You win!";
+            // alert("PLAYER 1 WINS");
+            //freeze function
             //insert win message 
             // endGame();
-        } else if (positionLeft === '700px') {
+        } else if (positionLeft === '600px') {
             incrementScore();
             console.log("bye");
             printTwo.innerHTML = pTwoScore++;
-            // printTwo.innerHTML = "You win!";
-            alert("PLAYER 2 WINS")
+            printTwo.innerHTML = "You win!";
+            // alert("PLAYER 2 WINS")
+            //freeze function
             //insert win message 
             // endGame();
         };
@@ -68,18 +70,16 @@ document.onkeyup = function (e) {
     winCondition();
 }
 
+//make freeze function to stop character from moving after winning
+
 const incrementScore = () => {
-    if (positionLeft === '-1px') {
+    if (positionLeft === '0px') {
         pOneScore++;
         // scoreTrack('print1', pOneScore)
-    } else if (positionLeft === '479px') {
+    } else if (positionLeft === '600px') {
         pTwoScore++;
         // scoreTrack('print2', pOneScore)
     }
-}
-
-const maxMove = () => {
-
 }
 
 document.getElementById('reset')
