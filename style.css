@@ -231,6 +231,7 @@ main .bg-modal {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  display: none;
 }
 
 main .bg-modal .modal-content {
@@ -254,7 +255,8 @@ main .bg-modal .modal-content .close {
   cursor: pointer;
 }
 
-main .bg-modal .modal-content .mod-img {
-  border: 2px solid blue;
+main .bg-modal .modal-content .win-head {
+  border: 2px solid yellow;
+  font-family: 'press start 2p', cursive;
 }
 /*# sourceMappingURL=style.css.map */

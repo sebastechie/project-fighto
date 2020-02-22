@@ -196,7 +196,7 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
-        // display: none;
+        display: none;
 
         .modal-content {
             // border: 0.5px solid white;
@@ -216,11 +216,15 @@ main {
                 font-size: 42px;
                 transform: rotate(45deg);
                 cursor: pointer;
-
             }
 
-            .mod-img {
-                border: 2px solid blue;        
+            // .mod-img {
+            //     border: 2px solid blue;        
+            // }
+
+            .win-head {
+                border: 2px solid yellow;
+                font-family: 'press start 2p', cursive;
             }
         }
     }

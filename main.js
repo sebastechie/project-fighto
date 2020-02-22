@@ -58,26 +58,32 @@ document.onkeyup = function (e) {
             console.log("player2WIN");
             printTwo.innerHTML = pTwoScore++;
             imageChange.src = '/images/saitama-win.png'
-            printTwo.innerHTML = "K, bye.";  
-            
+            printTwo.innerHTML = "K, bye.";
             gameOver = true;
-            
+            popUp();
+            winName('Player 1');
+
+
             // alert("PLAYER 1 WINS");
             //freeze function
             //insert win message 
             // endGame();
+            
         } else if (positionLeft === '550px') {
             incrementScore();
             console.log("player1WIN");
             printOne.innerHTML = pOneScore++;
             imageChange.src = '/images/goku-win-111.png'
-            printOne.innerHTML = "I win. LAWL.";     
+            printOne.innerHTML = "I win. LAWL.";
             gameOver = true;
-            
+            popUp();
+            winName('Player 2');
+
             // alert("PLAYER 2 WINS")
             //freeze function
             //insert win message 
             // endGame();
+            
         };
     }
     winCondition();
@@ -98,15 +104,34 @@ document.getElementById('reset')
         window.location.reload(true);
     });
 
-// document.getElementById('button').addEventListener('click', function () {
-//     document.querySelector('.bg-modal').style.display = 'flex';
-// });
+const popUp = () => {
+    document.querySelector('.bg-modal').style.display = 'flex';
+    
+};
 
 document.querySelector('.close').addEventListener('click', function () {
     document.querySelector('.bg-modal').style.display = 'none';
 });
 
 
+const winName = (name) => {
+    document.querySelector('.win-head').innerHTML = `${name}`; 
+};
+
+
+
+// ===============================================================
+// ==============================================================
+
+// const popUp = () => {
+//     document.getElementById('button').addEventListener('click', function () {
+//         document.querySelector('.bg-modal').style.display = 'flex';
+//     });
+
+//     document.querySelector('.close').addEventListener('click', function () {
+//         document.querySelector('.bg-modal').style.display = 'none';
+//     });
+// };
 // ===============================================================
 // ==============================================================
 
