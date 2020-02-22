@@ -98,6 +98,13 @@ document.getElementById('reset')
         window.location.reload(true);
     });
 
+// document.getElementById('button').addEventListener('click', function () {
+//     document.querySelector('.bg-modal').style.display = 'flex';
+// });
+
+document.querySelector('.close').addEventListener('click', function () {
+    document.querySelector('.bg-modal').style.display = 'none';
+});
 
 
 // ===============================================================
