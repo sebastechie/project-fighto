@@ -39,7 +39,7 @@ document.onkeyup = function (e) {
         if (positionLeft <= 2) {
             positionLeft += 50;
         }
-        imageChange.src = '/images/poser1.png';
+        imageChange.src = '/images/saitama-kick.png';
         playerMove();
     }
     else if (e.keyCode == 32) {
@@ -48,29 +48,32 @@ document.onkeyup = function (e) {
         if (positionLeft == 600) {
             positionLeft -= 50;
         }
-        imageChange.src = '/images/poser2.png'
+        imageChange.src = '/images/goku-kick.png'
         playerMove();
     }
 
     const winCondition = () => {
-        if (positionLeft === '0px') {
+        if (positionLeft === '50px') {
             incrementScore();
             console.log("player2WIN");
             printTwo.innerHTML = pTwoScore++;
-            imageChange.src = '/images/fb-icon.png'
+            imageChange.src = '/images/saitama-win.png'
+            printTwo.innerHTML = "K, bye.";  
+            
             gameOver = true;
-            // printOne.innerHTML = "I win. LAWL.";     
+            
             // alert("PLAYER 1 WINS");
             //freeze function
             //insert win message 
             // endGame();
-        } else if (positionLeft === '600px') {
+        } else if (positionLeft === '550px') {
             incrementScore();
             console.log("player1WIN");
             printOne.innerHTML = pOneScore++;
-            imageChange.src = '/images/fb-icon.png'
+            imageChange.src = '/images/goku-win-111.png'
+            printOne.innerHTML = "I win. LAWL.";     
             gameOver = true;
-            // printTwo.innerHTML = "K, bye.";  
+            
             // alert("PLAYER 2 WINS")
             //freeze function
             //insert win message 
@@ -79,8 +82,6 @@ document.onkeyup = function (e) {
     }
     winCondition();
 }
-
-//make freeze function to stop character from moving after winning
 
 const incrementScore = () => {
     if (positionLeft === '0px') {
