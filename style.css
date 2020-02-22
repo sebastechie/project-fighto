@@ -56,7 +56,7 @@ main .mid-container {
 
 main .mid-container .mid1, main .mid-container .mid3 {
   height: 100%;
-  width: 15%;
+  width: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

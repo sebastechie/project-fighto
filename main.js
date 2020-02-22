@@ -11,8 +11,14 @@ let pTwoScore = 0;
 const printOne = document.getElementById('print1');
 const printTwo = document.getElementById('print2');
 
+let gameOver = false;
+
 document.onkeyup = function (e) {
     console.log(e.keyCode);
+
+    if (gameOver === true) {
+        return;
+    };
 
     let imageChange = document.getElementById('ready');
     const playerMove = () => {
@@ -30,7 +36,7 @@ document.onkeyup = function (e) {
     if (e.keyCode == 13) {
         // console.log("LEFT");
         punch1.left = punch1.left -= 50;
-        if (positionLeft < 2) {
+        if (positionLeft <= 2) {
             positionLeft += 50;
         }
         imageChange.src = '/images/poser1.png';
@@ -39,7 +45,7 @@ document.onkeyup = function (e) {
     else if (e.keyCode == 32) {
         // console.log("RIGHT");
         punch1.left = punch1.left += 50;
-        if (positionLeft >= 600) {
+        if (positionLeft == 600) {
             positionLeft -= 50;
         }
         imageChange.src = '/images/poser2.png'
@@ -49,18 +55,22 @@ document.onkeyup = function (e) {
     const winCondition = () => {
         if (positionLeft === '0px') {
             incrementScore();
-            console.log("hello");
-            printOne.innerHTML = pOneScore++;
-            printOne.innerHTML = "You win!";
+            console.log("player2WIN");
+            printTwo.innerHTML = pTwoScore++;
+            imageChange.src = '/images/fb-icon.png'
+            gameOver = true;
+            // printOne.innerHTML = "I win. LAWL.";     
             // alert("PLAYER 1 WINS");
             //freeze function
             //insert win message 
             // endGame();
         } else if (positionLeft === '600px') {
             incrementScore();
-            console.log("bye");
-            printTwo.innerHTML = pTwoScore++;
-            printTwo.innerHTML = "You win!";
+            console.log("player1WIN");
+            printOne.innerHTML = pOneScore++;
+            imageChange.src = '/images/fb-icon.png'
+            gameOver = true;
+            // printTwo.innerHTML = "K, bye.";  
             // alert("PLAYER 2 WINS")
             //freeze function
             //insert win message 
@@ -87,9 +97,7 @@ document.getElementById('reset')
         window.location.reload(true);
     });
 
-// $('#reset').click(function () {
-//     window.location.reload(true);
-// })
+
 
 // ===============================================================
 // ==============================================================
