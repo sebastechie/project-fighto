@@ -62,6 +62,24 @@ main .welcome img {
   height: 100%;
 }
 
+main #second-div {
+  border: 2px solid blue;
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main #second-div #timey {
+  border: 2px solid black;
+  position: absolute;
+  width: 50px;
+}
+
 main .mid-container {
   height: 70%;
   width: 100%;

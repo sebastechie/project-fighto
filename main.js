@@ -1,6 +1,6 @@
 window.onload = () => {
 
-    let pressReady = true;
+    let pressReady = false;
 
     const gameStart = () => {
 
@@ -20,6 +20,9 @@ document.querySelector('.starto').addEventListener('click', function () {
     document.querySelector('.modal-top').style.display = 'none';
     document.querySelector('.modal-ready').style.display = 'none';
 
+    if (pressReady === true) {
+        return;
+    }
     
     let sec = 3;
 
