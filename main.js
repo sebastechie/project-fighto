@@ -13,6 +13,9 @@ const printTwo = document.getElementById('print2');
 
 let gameOver = false;
 
+// const start
+// setTimeout(startGame, 3000);
+
 document.onkeyup = function (e) {
     console.log(e.keyCode);
 
@@ -50,6 +53,13 @@ document.onkeyup = function (e) {
         }
         imageChange.src = '/images/goku-kick.png'
         playerMove();
+    } else if (e.keyCode == 65) {
+        punch1.left = punch1.left += 20;
+        if (positionLeft == 600) {
+            positionLeft -= 50;
+        }
+        imageChange.src = '/images/fusionn.gif'
+        playerMove();
     }
 
     const winCondition = () => {
@@ -60,15 +70,8 @@ document.onkeyup = function (e) {
             imageChange.src = '/images/saitama-win.png'
             printTwo.innerHTML = "K, bye.";
             gameOver = true;
-            popUp();
+            appearPopUp();
             winName('Player 1');
-
-
-            // alert("PLAYER 1 WINS");
-            //freeze function
-            //insert win message 
-            // endGame();
-            
         } else if (positionLeft === '550px') {
             incrementScore();
             console.log("player1WIN");
@@ -76,14 +79,11 @@ document.onkeyup = function (e) {
             imageChange.src = '/images/goku-win-111.png'
             printOne.innerHTML = "I win. LAWL.";
             gameOver = true;
-            popUp();
+            appearPopUp();
             winName('Player 2');
-
-            // alert("PLAYER 2 WINS")
-            //freeze function
-            //insert win message 
-            // endGame();
-            
+        } else if (e.keyCode === 65) {
+            gameOver = true;
+            appearPopUp();
         };
     }
     winCondition();
@@ -104,19 +104,24 @@ document.getElementById('reset')
         window.location.reload(true);
     });
 
+const appearPopUp = () => {
+    setTimeout(popUp, 3000);
+}
+
+
 const popUp = () => {
     document.querySelector('.bg-modal').style.display = 'flex';
-    
 };
 
 document.querySelector('.close').addEventListener('click', function () {
     document.querySelector('.bg-modal').style.display = 'none';
 });
 
-
 const winName = (name) => {
     document.querySelector('.win-head').innerHTML = `${name}`; 
 };
+
+
 
 
 
