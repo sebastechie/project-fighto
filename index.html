@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- <script src="main.js"></script> -->
     <title>Document</title>
@@ -13,29 +14,31 @@
     <main>
         <div class="modal-top">
             <div class="modal-ready">
-                <div>INSERT IMAGE</div>
+                <img src="/images/press-start.gif" alt="press-start" class="banner">
                 <div>
-                    <button class="starto">READY</button>
+                    <button class="starto">START</button>
                 </div>
             </div>
         </div>
         <div class="welcome">
             <header><img src="images/logo22.png" alt="fight-logo"></header>
         </div>
-        <div id="second-div">
-            <div id="timey">
-                3
-            </div>
-        </div>
         <div class="mid-container">
             <div class="mid1">
                 <div class="player one">Player 1</div>
-                <div class="score">Winner:</div>
-                <div id="print1">0</div>
+                <div id="print1">-</div>
+                <img src="/images/Chunky_Kong_zps5645a5f8.gif" alt="" class="cheer a">
             </div>
             <div class="mid2">
+                <div id="second-div">
+                    <div id="timey">
+                        3
+                    </div>
+                    <img src="/images/fightoo.png" alt="fightoo" id="go">
+                </div>
                 <div class="bkg-img">
-                    <img src="/images/bg2.jpg" alt="">
+                    <!-- <img src="/images/bg2.jpg" alt="background1"> -->
+                    <img src="/images/bg2.jpg" alt="background" class="map-1">
                 </div>
                 <!-- <div id="griff">
                     <img src="/images/chris-gif.gif" alt="">
@@ -50,25 +53,36 @@
             </div>
             <div class="mid3">
                 <div class="player two">Player 2</div>
-                <div class="score">Winner:</div>
-                <div id="print2">0</div>
+                <div id="print2">-</div>
+                <!-- <div class="cheer"><img src="/images/cheer1.gif" alt=""></div> -->
+                <img src="/images/cheer5.gif" alt="" class="cheer b">
             </div>
         </div>
         <footer>
-            <div>
+            <div class="foot-side">
                 <!-- <img src="/images/koopa-gif.gif" alt="koopa"> -->
                 <img src="/images/Chunky_Kong_zps5645a5f8.gif" alt="">
                 <!-- <img src="/images/action1.gif" alt=""> -->
             </div>
-            <div class="leggo">Let's gooooooooooo!!!</div>
+            <div class="maps">
+                <button class="bg main">PANDA-TOWN</button>
+                <button class="bg x">JUMANJI</button>
+                <button class="bg y">P CIRCUS</button>
+                <button class="bg z">BARBICAN</button>
+            </div>
+            <div class="foot-side"></div>
         </footer>
         <!-- modal section -->
         <div class="bg-modal">
             <div class="modal-content">
                 <div class="close">+</div>
+                <div class="congrats alpha">
+                    <img src="/images/cheer5.gif" alt="congrats" class="congrats bravo">
+                </div>
                 <div class="mod-img">
-                    <p class="win-head">ENTER WINNER HERE</p>
-                    <!-- <img src="/images/chris-gif.gif" alt="chris-gif"> -->
+                    <div class="win-contain">
+                        <p class="win-head">ENTER WINNER HERE</p>
+                    </div>
                 </div>
                 <div class="mid-bottom">
                     <button id="reset">REMATCH</button>
@@ -82,4 +96,4 @@
 </html>
 
 
-<!-- <img src="/images/fusionn.gif" alt=""> -->
+<!-- <img src="/images/ohno.gif" alt=""> -->
