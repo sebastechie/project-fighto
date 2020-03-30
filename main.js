@@ -78,7 +78,7 @@ document.querySelector('.starto').addEventListener('click', function () {
                 if (positionLeft <= 2) {
                     positionLeft += 50;
                 }
-                imageChange.src = '/images/saitama-kick.png';
+                imageChange.src = './images/saitama-kick.png';
                 playerMove();
             }
             else if (e.keyCode == 32) {
@@ -87,14 +87,14 @@ document.querySelector('.starto').addEventListener('click', function () {
                 if (positionLeft == 600) {
                     positionLeft -= 50;
                 }
-                imageChange.src = '/images/goku-kick.png'
+                imageChange.src = './images/goku-kick.png'
                 playerMove();
             } else if (e.keyCode == 65) {
                 punch1.left = punch1.left += 20;
                 if (positionLeft == 600) {
                     positionLeft -= 50;
                 }
-                imageChange.src = '/images/fusionn.gif'
+                imageChange.src = './images/fusionn.gif'
                 playerMove();
             }
 
@@ -103,7 +103,7 @@ document.querySelector('.starto').addEventListener('click', function () {
                     incrementScore();
                     console.log("player2WIN");
                     // printTwo.innerHTML = pTwoScore++;
-                    imageChange.src = '/images/saitama-win.png'
+                    imageChange.src = './images/saitama-win.png'
                     printTwo.innerHTML = "Night night!";
                     gameOver = true;
                     appearPopUp();
@@ -112,7 +112,7 @@ document.querySelector('.starto').addEventListener('click', function () {
                     incrementScore();
                     console.log("player1WIN");
                     // printOne.innerHTML = pOneScore++;
-                    imageChange.src = '/images/goku-win-111.png'
+                    imageChange.src = './images/goku-win-111.png'
                     printOne.innerHTML = "I win. LAWL."
                     gameOver = true;
                     appearPopUp();
@@ -159,28 +159,28 @@ document.querySelector('.starto').addEventListener('click', function () {
 
         const mapChangeMain = () => {
             document.querySelector('.main').addEventListener('click', function () {
-                document.querySelector('.map-1').src = '/images/bg2.jpg';
+                document.querySelector('.map-1').src = './images/bg2.jpg';
             })
         }
         mapChangeMain();
 
         const mapChangeOne = () => {
             document.querySelector('.x').addEventListener('click', function () {
-                document.querySelector('.map-1').src = '/images/bg95.gif';
+                document.querySelector('.map-1').src = './images/bg95.gif';
             })
         }
         mapChangeOne();
 
         const mapChangeTwo = () => {
             document.querySelector('.y').addEventListener('click', function () {
-                document.querySelector('.map-1').src = '/images/bg101.jpg';
+                document.querySelector('.map-1').src = './images/bg101.jpg';
             })
         }
         mapChangeTwo();
 
         const mapChangeThree = () => {
             document.querySelector('.z').addEventListener('click', function () {
-                document.querySelector('.map-1').src = '/images/bg97.gif';
+                document.querySelector('.map-1').src = './images/bg97.gif';
             })
         }
         mapChangeThree();
