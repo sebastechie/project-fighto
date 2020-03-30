@@ -15,6 +15,7 @@ const timer = () => {
     setTimeout(typeStart, 3000);
 }
 
+
 document.querySelector('.starto').addEventListener('click', function () {
     document.querySelector('#timey').style.display = 'flex';
     document.querySelector('.modal-top').style.display = 'none';
