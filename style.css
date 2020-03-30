@@ -20,7 +20,7 @@ main {
 main .modal-top {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   position: absolute;
   top: 0;
   display: -webkit-box;
@@ -29,16 +29,51 @@ main .modal-top {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 main .modal-top .modal-ready {
-  border: 2px solid yellow;
-  height: 300px;
-  width: 900px;
+  height: 100%;
+  width: 100%;
   position: relative;
-  background-color: blue;
+  background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
   z-index: 1;
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .modal-top .modal-ready .banner {
+  height: 180px;
+}
+
+main .modal-top .modal-ready .starto {
+  cursor: pointer;
+  width: 350px;
+  height: 60px;
+  background-color: aliceblue;
+  border-radius: 8px;
+  font-size: 20px;
+  font-family: 'press start 2p', cursive;
+  outline: none;
+}
+
+main .modal-top .modal-ready .starto:hover {
+  background-color: gold;
 }
 
 main .welcome {
@@ -62,24 +97,6 @@ main .welcome img {
   height: 100%;
 }
 
-main #second-div {
-  border: 2px solid blue;
-  position: relative;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-main #second-div #timey {
-  border: 2px solid black;
-  position: absolute;
-  width: 50px;
-}
-
 main .mid-container {
   height: 70%;
   width: 100%;
@@ -98,7 +115,7 @@ main .mid-container {
 
 main .mid-container .mid1, main .mid-container .mid3 {
   height: 100%;
-  width: 20%;
+  min-width: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,39 +126,40 @@ main .mid-container .mid1, main .mid-container .mid3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   font-family: 'press start 2p', cursive;
 }
 
 main .mid-container .mid1 .player, main .mid-container .mid3 .player {
   border-bottom: 4px solid #FC9F21;
   color: #FC9F21;
-  height: 10%;
+  height: 20px;
   width: 100%;
   text-align: center;
   margin-top: 30px;
   text-transform: uppercase;
+  padding: 30px 0;
 }
 
-main .mid-container .mid1 .score, main .mid-container .mid3 .score {
-  height: 10%;
-  width: 100%;
+main .mid-container .mid1 .cheer, main .mid-container .mid3 .cheer {
+  height: 90px;
+  width: 100px;
   text-align: center;
   margin-top: 50px;
   letter-spacing: 3px;
+  display: none;
 }
 
-main .mid-container .mid1 .score-print, main .mid-container .mid3 .score-print {
+main .mid-container .mid1 #print1, main .mid-container .mid3 #print1 {
   width: 100%;
-  height: 30%;
+  height: 20px;
   text-align: center;
-  font-size: 60px;
+  font-size: 20px;
+  padding: 30px 0;
 }
 
 main .mid-container .mid2 {
-  border: 0.5px solid red;
   left: 0;
   height: 100%;
   min-width: 700px;
@@ -158,17 +176,45 @@ main .mid-container .mid2 {
           align-items: center;
 }
 
-main .mid-container .mid2 .bkg-img {
+main .mid-container .mid2 #second-div {
   position: absolute;
-  background-size: fill;
-  height: auto;
-  width: auto;
+  height: 70px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+  top: 60;
 }
 
-main .mid-container .mid2 #griff {
+main .mid-container .mid2 #second-div #timey {
   position: absolute;
-  top: 180px;
-  left: 300px;
+  text-align: center;
+  font-family: 'Orbitron';
+  font-size: 110px;
+  display: none;
+  color: black;
+  font-weight: 900;
+}
+
+main .mid-container .mid2 #second-div #go {
+  display: none;
+}
+
+main .mid-container .mid2 .bkg-img {
+  position: absolute;
+  background-size: cover;
+}
+
+main .mid-container .mid2 .bkg-img .map-1 {
+  height: 400px;
+  width: 700px;
 }
 
 main .mid-container .mid2 #punch1 {
@@ -181,7 +227,7 @@ main .mid-container .mid2 #punch1 {
       -ms-flex-pack: center;
           justify-content: center;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 300px;
 }
 
@@ -214,21 +260,6 @@ main .mid-container img {
   background-size: cover;
 }
 
-main .mid-bottom {
-  border: 2px solid red;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 30px;
-}
-
-main .mid-bottom btn {
-  border: 6px solid blue;
-}
-
 main footer {
   background-color: purple;
   width: 100%;
@@ -239,23 +270,84 @@ main footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   overflow: hidden;
-  background-size: fill;
 }
 
-main footer img {
+main footer .foot-side {
+  border-left: 0.5px solid #141414;
+  border-right: 0.5px solid #141414;
+  min-width: 20%;
+  height: 80%;
+}
+
+main footer .foot-side img {
   height: 100%;
   padding-left: 20px;
 }
 
-main footer .leggo {
+main footer .maps {
+  background-color: red;
+  height: 100%;
+  width: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main footer .maps button {
+  height: 100%;
+  width: 100%;
   font-family: 'press start 2p', cursive;
-  letter-spacing: 2px;
+  font-size: 10px;
   color: aliceblue;
-  text-align: center;
-  padding-top: 40px;
-  width: 40%;
-  text-transform: uppercase;
+  background-color: purple;
+  border: none;
+  cursor: pointer;
+}
+
+main footer .maps button:hover.main {
+  opacity: 0.7;
+  background-image: url("/images/bg2.jpg");
+  height: 400px;
+  width: 700px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+main footer .maps button:hover.x {
+  opacity: 0.7;
+  background-image: url("/images/bg95.gif");
+  height: 400px;
+  width: 700px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+main footer .maps button:hover.y {
+  opacity: 0.7;
+  background-image: url("/images/bg101.jpg");
+  height: 400px;
+  width: 700px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+main footer .maps button:hover.z {
+  opacity: 0.7;
+  background-image: url("/images/bg97.gif");
+  height: 400px;
+  width: 700px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 main .bg-modal {
@@ -274,17 +366,35 @@ main .bg-modal {
       -ms-flex-align: center;
           align-items: center;
   display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 main .bg-modal .modal-content {
-  background-color: white;
+  border: 0.5px solid yellowgreen;
+  background-color: none;
   width: 500px;
-  height: 300px;
+  height: 200px;
   background-color: none;
   border-radius: 4px;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 main .bg-modal .modal-content .close {
@@ -294,11 +404,70 @@ main .bg-modal .modal-content .close {
   font-size: 42px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+  color: aliceblue;
+  font-weight: 800;
   cursor: pointer;
 }
 
-main .bg-modal .modal-content .win-head {
-  border: 2px solid yellow;
+main .bg-modal .modal-content .close:hover {
+  color: yellowgreen;
+}
+
+main .bg-modal .modal-content .congrats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .bg-modal .modal-content .congrats .bravo {
+  position: absolute;
+  top: -70;
+  height: 120px;
+  width: 120px;
+}
+
+main .bg-modal .modal-content .mod-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 50px;
+  background-color: aliceblue;
+  color: #141414;
+  border-radius: 6px;
+  height: 100px;
+  width: 380px;
+}
+
+main .bg-modal .modal-content .mod-img .win-head {
   font-family: 'press start 2p', cursive;
+  color: #141414;
+  font-size: 25px;
+  text-align: center;
+}
+
+main .bg-modal .modal-content button {
+  cursor: pointer;
+  height: 35px;
+  width: 230px;
+  background-color: aliceblue;
+  border-radius: 6px;
+  font-family: 'press start 2p', cursive;
+  margin-top: 10px;
+  outline: none;
+}
+
+main .bg-modal .modal-content button:hover {
+  text-align: center;
+  background-color: yellowgreen;
+  color: black;
 }
 /*# sourceMappingURL=style.css.map */

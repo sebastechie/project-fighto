@@ -3,7 +3,6 @@ window.onload = () => {
     let pressReady = false;
 
     const gameStart = () => {
-
         if (pressReady === false) {
             timer();
             return true;
@@ -17,12 +16,9 @@ const timer = () => {
 }
 
 document.querySelector('.starto').addEventListener('click', function () {
+    document.querySelector('#timey').style.display = 'flex';
     document.querySelector('.modal-top').style.display = 'none';
     document.querySelector('.modal-ready').style.display = 'none';
-
-    if (pressReady === true) {
-        return;
-    }
     
     let sec = 3;
 
@@ -30,12 +26,11 @@ document.querySelector('.starto').addEventListener('click', function () {
         sec = sec - 1;
         if (sec < 3) {
             timey.innerHTML = sec;
-            pressReady = true;
         }
         if (sec < 1) {
             window.clearInterval(count);
             document.getElementById('timey').style.display = 'none';
-            pressReady = false;
+            typeStart();
         }
     }
 
@@ -50,11 +45,10 @@ document.querySelector('.starto').addEventListener('click', function () {
 
         let positionLeft;
 
-        let pOneScore = 0;
-        let pTwoScore = 0;
+        // let pOneScore = 0;
+        // let pTwoScore = 0;
         const printOne = document.getElementById('print1');
         const printTwo = document.getElementById('print2');
-
 
         let gameOver = false;
 
@@ -108,21 +102,21 @@ document.querySelector('.starto').addEventListener('click', function () {
                 if (positionLeft === '50px') {
                     incrementScore();
                     console.log("player2WIN");
-                    printTwo.innerHTML = pTwoScore++;
+                    // printTwo.innerHTML = pTwoScore++;
                     imageChange.src = '/images/saitama-win.png'
-                    printTwo.innerHTML = "K, bye.";
+                    printTwo.innerHTML = "Night night!";
                     gameOver = true;
                     appearPopUp();
-                    winName('Player 1');
+                    winName('PLAYER 2');
                 } else if (positionLeft === '550px') {
                     incrementScore();
                     console.log("player1WIN");
-                    printOne.innerHTML = pOneScore++;
+                    // printOne.innerHTML = pOneScore++;
                     imageChange.src = '/images/goku-win-111.png'
-                    printOne.innerHTML = "I win. LAWL.";
+                    printOne.innerHTML = "I win. LAWL."
                     gameOver = true;
                     appearPopUp();
-                    winName('Player 2');
+                    winName('PLAYER 1');
                 } else if (e.keyCode === 65) {
                     gameOver = true;
                     appearPopUp();
@@ -150,7 +144,6 @@ document.querySelector('.starto').addEventListener('click', function () {
             setTimeout(popUp, 3000);
         }
 
-
         const popUp = () => {
             document.querySelector('.bg-modal').style.display = 'flex';
         };
@@ -162,69 +155,35 @@ document.querySelector('.starto').addEventListener('click', function () {
         const winName = (name) => {
             document.querySelector('.win-head').innerHTML = `${name}` + " WINS!";
         };
+
+
+        const mapChangeMain = () => {
+            document.querySelector('.main').addEventListener('click', function () {
+                document.querySelector('.map-1').src = '/images/bg2.jpg';
+            })
+        }
+        mapChangeMain();
+
+        const mapChangeOne = () => {
+            document.querySelector('.x').addEventListener('click', function () {
+                document.querySelector('.map-1').src = '/images/bg95.gif';
+            })
+        }
+        mapChangeOne();
+
+        const mapChangeTwo = () => {
+            document.querySelector('.y').addEventListener('click', function () {
+                document.querySelector('.map-1').src = '/images/bg101.jpg';
+            })
+        }
+        mapChangeTwo();
+
+        const mapChangeThree = () => {
+            document.querySelector('.z').addEventListener('click', function () {
+                document.querySelector('.map-1').src = '/images/bg97.gif';
+            })
+        }
+        mapChangeThree();
     }
-
     typeStart();
-
 });
-    // ===============================================================
-    // ==============================================================
-
-    // const popUp = () => {
-    //     document.getElementById('button').addEventListener('click', function () {
-    //         document.querySelector('.bg-modal').style.display = 'flex';
-    //     });
-
-    //     document.querySelector('.close').addEventListener('click', function () {
-    //         document.querySelector('.bg-modal').style.display = 'none';
-    //     });
-    // };
-    // ===============================================================
-    // ==============================================================
-
-
-    // const endGame = () => {
-    //     if (incrementScore === 3) {
-    //         alert("CHAMPION!")
-    //     } else {
-    //         return null;
-    //     }
-    // }
-
-    // endGame();
-
-    // const resetGame = () => {
-    //     // imageChange.style.left = positionLeft + "px";
-    // }
-
-    // resetGame();
-
-    // document.getElementById("reset").onclick = function () {
-    //     document.getElementById("numbers").innerHTML = "";
-    // };
-
-    // const displayScore = (scores) => {
-    //     console.log(scores);
-    //     myElem = document.getElementById('print1');
-    //     myElem2 = document.getElementById('print2');
-    //     myElem.innerText8 = scores.player1;
-    //     myElem2.innerText = scores.player2;
-    //     return true;
-
-
-
-
-    //MAKE ENDGAME FUNCTION
-
-    //MAKE RESET FUNCTION
-
-    // ===============================================================
-    // ==============================================================
-
-    // PSEUDO CODE
-
-    // 1. assign keydown event to left and right moves to space and enter keys 
-    //  1.1 make div change between punch first and second for each key press
-    // 2. make left and right move by about 10px each press
-    // 3. declare winner once certain amount of moves have been achieved
-
