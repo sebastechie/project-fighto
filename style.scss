@@ -7,6 +7,7 @@
 main {
     // border: 2px solid red;  
     width: 100vw;
+    min-width: 1100px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -94,7 +95,15 @@ main {
             flex-direction: column;
             align-items: center;
             justify-content: space-around;
+            justify-content: space-evenly;
             font-family: 'press start 2p', cursive;
+            padding: 30px;
+            text-align: center;
+            cursor: default;
+
+            .key {
+                color: rgba(grey, 0.5);
+            }
             // z-index: 0;
 
             .player {
@@ -154,13 +163,12 @@ main {
                     // border: 2px solid black;
                     position: absolute; 
                     text-align: center;
-                    // width: 1px;
                     font-family: 'Orbitron';
                     font-size: 110px;
                     display: none;
-                    color: black;
-                    // color: rgba(0,0,0, 0.8);
+                    color: white;
                     font-weight: 900;
+                    cursor: default;
                 }
 
                 #go {
@@ -174,8 +182,10 @@ main {
                 background-size: cover;
 
                 .map-1 {
-                    height: 400px;
+                    height: 500px;
+                    min-height: 500px;
                     width: 700px;
+                    min-width: 700px;
                 }
             }
 
@@ -190,34 +200,32 @@ main {
                 position: absolute;
                 // top: 50%; //for main bg
                 top: 60%;
-                // left: 33%;
                 left: 300px;
-                // z-index: 0;
 
                 img {
                     // border: 2px solid red;
                     position: absolute;
-                    height: 100%;
-                    // display: none;
+                    height: 150px;
+                    min-height: 150px;
                 }
             }
 
-            #punch2 {
-                // border: 2px solid red;
-                height: 230px;
-                width: 32%;
-                display: flex;
-                justify-content: center;
-                position: absolute;
-                top: 100px;
-                left: 260px;
-                display: none;
+            // #punch2 {
+            //     // border: 2px solid red;
+            //     height: 230px;
+            //     width: 32%;
+            //     display: flex;
+            //     justify-content: center;
+            //     position: absolute;
+            //     top: 100px;
+            //     left: 260px;
+            //     display: none;
 
-                img {
-                    position: absolute;
-                    height: 100%;
-                }
-            }
+            //     img {
+            //         position: absolute;
+            //         height: 100%;
+            //     }
+            // }
         }
     }
     
@@ -252,12 +260,13 @@ main {
         }
 
         .maps {
-            background-color: red;
+            background-color: rgba(0,0,0, 0.8);
             height: 100%;
             width: 700px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            button:focus {outline:0;}
             
             button {
                 height: 100%;
