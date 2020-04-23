@@ -5,7 +5,7 @@
 }
 
 main {
-    border: 2px solid red;  
+    // border: 2px solid red;  
     width: 100vw;
     min-width: 1100px;
     min-height: 700px;
@@ -160,7 +160,7 @@ main {
                 z-index: 1;
                 top: 60;
         
-                #timey {
+                #countdown {
                     // border: 2px solid black;
                     position: absolute; 
                     text-align: center;

@@ -1,7 +1,5 @@
 window.onload = () => {
-
     let pressReady = false;
-
     const gameStart = () => {
         if (pressReady === false) {
             timer();
@@ -16,40 +14,34 @@ const timer = () => {
 }
 
 document.querySelector('.starto').addEventListener('click', function () {
-    document.querySelector('#timey').style.display = 'flex';
+    document.querySelector('#countdown').style.display = 'flex';
     document.querySelector('.modal-top').style.display = 'none';
     document.querySelector('.modal-ready').style.display = 'none';
     
     let sec = 3;
-
     const timer = () => {
         sec = sec - 1;
         if (sec < 3) {
-            timey.innerHTML = sec;
+            countdown.innerHTML = sec;
         }
         if (sec < 1) {
             window.clearInterval(count);
-            document.getElementById('timey').style.display = 'none';
+            document.getElementById('countdown').style.display = 'none';
             typeStart();
         }
     }
-
     count = setInterval(timer, 1000);
 
     const typeStart = () => {
-
         let punch1 = {
-            // top: 1,
             left: 300
         }
 
         let positionLeft;
-
         // let pOneScore = 0;
         // let pTwoScore = 0;
         const printOne = document.getElementById('print1');
         const printTwo = document.getElementById('print2');
-
         let gameOver = false;
 
         document.onkeyup = function (e) {
