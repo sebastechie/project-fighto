@@ -61,12 +61,10 @@ document.querySelector('.starto').addEventListener('click', function () {
 
             let imageChange = document.getElementById('ready');
             const playerMove = () => {
-
                 document.getElementById('punch1').style.left = punch1.left + "px";
                 positionLeft = document.getElementById('punch1').style.left;
                 const positionRight = document.getElementById('punch1').style.right;
                 const windowPosition = document.querySelector(".mid2").style.left;
-
                 console.log(positionLeft);
                 console.log(positionRight);
                 console.log(windowPosition);
